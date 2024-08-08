@@ -11,8 +11,8 @@ Join our <a href="docs/wechat.md" target="_blank"> 💬 WeChat</a>
 
 
 <p align="center">
-  MiniCPM-V 2.6 <a href="https://huggingface.co/openbmb/MiniCPM-V-2_6">🤗</a> <a href="http://120.92.209.146:8887/">🤖</a> | MiniCPM-Llama3-V 2.5  <a href="https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5/">🤗</a> <a href="https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5">🤖</a> |
-  <a href=https://github.com/OpenBMB/MiniCPM-V/tree/main/docs/MiniCPM_Llama3_V_25_technical_report.pdf>MiniCPM-Llama3-V 2.5 Technical Report</a> 
+  MiniCPM-V 2.6 <a href="https://huggingface.co/openbmb/MiniCPM-V-2_6">🤗</a> <a href="https://huggingface.co/spaces/openbmb/MiniCPM-V-2_6">🤖</a> | MiniCPM-Llama3-V 2.5  <a href="https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5/">🤗</a> <a href="https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5">🤖</a> |
+  <a href=https://arxiv.org/abs/2408.01800>MiniCPM-Llama3-V 2.5 Technical Report</a> 
 </p>
 
 </div>
@@ -29,8 +29,8 @@ Join our <a href="docs/wechat.md" target="_blank"> 💬 WeChat</a>
 
 #### 📌 Pinned
 * [2024.08.06] 🔥🔥🔥 We open-source MiniCPM-V 2.6, which outperforms GPT-4V on single image, multi-image and video understanding. It advances popular features of MiniCPM-Llama3-V 2.5, and can support real-time video understanding on iPad. Try it now!
-* [2024.08.03] MiniCPM-Llama3-V 2.5 technical report is released! See [here](./docs/MiniCPM_Llama3_V_25_technical_report.pdf).
-* [2024.07.19] MiniCPM-Llama3-V 2.5 supports vLLM now! See [here](#vllm).
+* [2024.08.03] MiniCPM-Llama3-V 2.5 technical report is released! See [here](https://arxiv.org/abs/2408.01800).
+* [2024.07.19] MiniCPM-Llama3-V 2.5 supports vLLM now! See [here](#inference-with-vllm).
 * [2024.05.28] 🚀🚀🚀 MiniCPM-Llama3-V 2.5 now fully supports its feature in llama.cpp and ollama! Please pull the latest code **of our provided forks** ([llama.cpp](https://github.com/OpenBMB/llama.cpp/blob/minicpm-v2.5/examples/minicpmv/README.md), [ollama](https://github.com/OpenBMB/ollama/tree/minicpm-v2.5/examples/minicpm-v2.5)). GGUF models in various sizes are available [here](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-gguf/tree/main). MiniCPM-Llama3-V 2.5 series is **not supported by the official repositories yet**, and we are working hard to merge PRs. Please stay tuned!
 * [2024.05.28] 💫 We now support LoRA fine-tuning for MiniCPM-Llama3-V 2.5, using only 2 V100 GPUs! See more statistics [here](https://github.com/OpenBMB/MiniCPM-V/tree/main/finetune#model-fine-tuning-memory-usage-statistics).
 * [2024.05.23] 🔍 We've released a comprehensive comparison between Phi-3-vision-128k-instruct and MiniCPM-Llama3-V 2.5, including benchmarks evaluations, multilingual capabilities, and inference efficiency 🌟📊🌍🚀. Click [here](./docs/compare_with_phi-3_vision.md) to view more details.
@@ -45,7 +45,7 @@ Join our <a href="docs/wechat.md" target="_blank"> 💬 WeChat</a>
 * [2024.05.25] MiniCPM-Llama3-V 2.5 now supports streaming outputs and customized system prompts. Try it [here](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5#usage)!
 * [2024.05.24] We release the MiniCPM-Llama3-V 2.5 [gguf](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-gguf), which supports [llama.cpp](#inference-with-llamacpp) inference and provides a 6~8 token/s smooth decoding on mobile phones. Try it now!
 * [2024.05.20] We open-soure MiniCPM-Llama3-V 2.5, it has improved OCR capability and supports 30+ languages, representing the first end-side MLLM achieving GPT-4V level performance! We provide [efficient inference](#deployment-on-mobile-phone) and [simple fine-tuning](./finetune/readme.md). Try it now!
-* [2024.04.23] MiniCPM-V-2.0 supports vLLM now! Click [here](#vllm) to view more details.
+* [2024.04.23] MiniCPM-V-2.0 supports vLLM now! Click [here](#inference-with-vllm) to view more details.
 * [2024.04.18] We create a HuggingFace Space to host the demo of MiniCPM-V 2.0 at [here](https://huggingface.co/spaces/openbmb/MiniCPM-V-2)!
 * [2024.04.17] MiniCPM-V-2.0 supports deploying [WebUI Demo](#webui-demo) now!
 * [2024.04.15] MiniCPM-V-2.0 now also supports [fine-tuning](https://github.com/modelscope/swift/blob/main/docs/source/Multi-Modal/minicpm-v-2最佳实践.md) with the SWIFT framework!
@@ -62,7 +62,7 @@ Join our <a href="docs/wechat.md" target="_blank"> 💬 WeChat</a>
 - [MiniCPM-V 2.6](#minicpm-v-26)
 - [MiniCPM-Llama3-V 2.5](#minicpm-llama3-v-25)
 - [MiniCPM-V 2.0](#minicpm-v-20)
-- [Chat with Our Demo on Gradio](#chat-with-our-demo-on-gradio)
+- [Chat with Our Demo on Gradio 🤗](#chat-with-our-demo-on-gradio-)
 - [Install](#install)
 - [Inference](#inference)
   - [Model Zoo](#model-zoo)
@@ -93,14 +93,14 @@ Join our <a href="docs/wechat.md" target="_blank"> 💬 WeChat</a>
 
 - 💪 **Strong OCR Capability and Others.**
   MiniCPM-V 2.6 can process images with any aspect ratio and up to 1.8 million pixels (e.g., 1344x1344). It achieves **state-of-the-art performance on OCRBench, surpassing proprietary models such as GPT-4o, GPT-4V, and Gemini 1.5 Pro**.
-  Based on the the latest [RLAIF-V](https://github.com/RLHF-V/RLAIF-V/) and [VisCPM](https://github.com/OpenBMB/VisCPM) techniques, it features **trustworthy behaviors**, with significantly lower hallucination rates than GPT-4o and GPT-4V on Object HalBench, and supports **multilingual capabilities** on English, Chiense, German, French, Italian, Korean, etc.
+  Based on the the latest [RLAIF-V](https://github.com/RLHF-V/RLAIF-V/) and [VisCPM](https://github.com/OpenBMB/VisCPM) techniques, it features **trustworthy behaviors**, with significantly lower hallucination rates than GPT-4o and GPT-4V on Object HalBench, and supports **multilingual capabilities** on English, Chinese, German, French, Italian, Korean, etc.
 
 
 - 🚀 **Superior Efficiency.**
   In addition to its friendly size, MiniCPM-V 2.6 also shows **state-of-the-art token density** (i.e., number of pixels encoded into each visual token). **It produces only 640 tokens when processing a 1.8M pixel image, which is 75% fewer than most models**. This directly improves the inference speed, first-token latency, memory usage, and power consumption. As a result, MiniCPM-V 2.6 can efficiently support **real-time video understanding** on end-side devices such as iPad.
 
 -  💫  **Easy Usage.**
-MiniCPM-V 2.6 can be easily used in various ways: (1) [llama.cpp](https://github.com/OpenBMB/llama.cpp/blob/minicpmv-main/examples/llava/README-minicpmv2.6.md) and [ollama](https://github.com/OpenBMB/ollama/blob/minicpm-v2.6/examples/minicpm-v2.6/README.md) support for efficient CPU inference on local devices, (2) [int4](https://huggingface.co/openbmb/MiniCPM-V-2_6-int4) and [GGUF](https://huggingface.co/openbmb/MiniCPM-V-2_6-gguf) format quantized models in 16 sizes, (3) [vLLM](#inference-with-vllm) support for high-throughput and memory-efficient inference, (4) fine-tuning on new domains and tasks, (5) quick local WebUI demo setup with [Gradio](#chat-with-our-demo-on-gradio), and (6) online web [demo](http://120.92.209.146:8887/).
+MiniCPM-V 2.6 can be easily used in various ways: (1) [llama.cpp](https://github.com/OpenBMB/llama.cpp/blob/minicpmv-main/examples/llava/README-minicpmv2.6.md) and [ollama](https://github.com/OpenBMB/ollama/blob/minicpm-v2.6/examples/minicpm-v2.6/README.md) support for efficient CPU inference on local devices, (2) [int4](https://huggingface.co/openbmb/MiniCPM-V-2_6-int4) and [GGUF](https://huggingface.co/openbmb/MiniCPM-V-2_6-gguf) format quantized models in 16 sizes, (3) [vLLM](#inference-with-vllm) support for high-throughput and memory-efficient inference, (4) fine-tuning on new domains and tasks, (5) quick local WebUI demo setup with [Gradio](#chat-with-our-demo-on-gradio), and (6) online web [demo](https://huggingface.co/spaces/openbmb/MiniCPM-V-2_6).
 
 ### Evaluation  <!-- omit in toc -->
 <div align="center">
@@ -1226,14 +1226,14 @@ We deploy MiniCPM-V 2.0 on end devices. The demo video is the raw screen recordi
 | OmniLMM-12B  | [Document](./omnilmm_en.md)   |  
 
 
-## Chat with Our Demo on Gradio
+## Chat with Our Demo on Gradio 🤗
 
-We provide online and local demos powered by HuggingFace [Gradio](https://github.com/gradio-app/gradio), the most popular model deployment framework nowadays. It supports streaming outputs, progress bars, queuing, alerts,  and other useful features.
+We provide online and local demos powered by Hugging Face Gradio <a href='https://github.com/gradio-app/gradio'><img src='https://img.shields.io/github/stars/gradio-app/gradio'></a>, the most popular model deployment framework nowadays. It supports streaming outputs, progress bars, queuing, alerts,  and other useful features.
 
 
 ### Online Demo <!-- omit in toc --> 
 
-Click here to try out the online demo of [MiniCPM-V 2.6](http://120.92.209.146:8887/) | [MiniCPM-Llama3-V 2.5](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5) | [MiniCPM-V 2.0](https://huggingface.co/spaces/openbmb/MiniCPM-V-2).
+Click here to try out the online demo of [MiniCPM-V 2.6](https://huggingface.co/spaces/openbmb/MiniCPM-V-2_6) | [MiniCPM-Llama3-V 2.5](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5) | [MiniCPM-V 2.0](https://huggingface.co/spaces/openbmb/MiniCPM-V-2).
 
 ### Local WebUI Demo <!-- omit in toc --> 
   
@@ -1504,7 +1504,7 @@ PYTORCH_ENABLE_MPS_FALLBACK=1 python test.py
 </details>
 
 ### Deployment on Mobile Phone
-MiniCPM-Llama3-V 2.5 and MiniCPM-V 2.0 can be deployed on mobile phones with Android operating systems. 🚀 Click [MiniCPM-Llama3-V 2.5](http://minicpm.modelbest.cn/android/modelbest-release-20240528_182155.apk) / [MiniCPM-V 2.0](https://github.com/OpenBMB/mlc-MiniCPM) to install apk.
+MiniCPM-V 2.0 can be deployed on mobile phones with Android operating systems. 🚀 Click [MiniCPM-V 2.0](https://github.com/OpenBMB/mlc-MiniCPM) to install apk.
 
 ### Inference with llama.cpp
 MiniCPM-V 2.6 can run with llama.cpp now! See [our fork of llama.cpp](https://github.com/OpenBMB/llama.cpp/tree/minicpmv-main/examples/llava/README-minicpmv2.6.md) for more detail. This implementation supports smooth inference of 16~18 token/s on iPad (test environment：iPad Pro + M4).
@@ -1515,25 +1515,89 @@ MiniCPM-V 2.6 can run with ollama now! See [our fork of ollama](https://github.c
 ### Inference with vLLM
 
 <details>
-<summary> vLLM now officially supports MiniCPM-V 2.0, MiniCPM-Llama3-V 2.5 and MiniCPM-V 2.6, Click to see. </summary>
+<summary> vLLM now officially supports MiniCPM-V 2.6, MiniCPM-Llama3-V 2.5 and MiniCPM-V 2.0, Click to see. </summary>
 
-1. Clone the official vLLM:
+1. Install vLLM(>=0.5.4):
 ```shell
-git clone https://github.com/vllm-project/vllm.git
+pip install vllm
 ```
-2. Install vLLM:
-```shell
-cd vllm
-pip install -e .
-```
-3. Install timm: (optional, MiniCPM-V 2.0 need timm)
+2. Install timm: (optional, MiniCPM-V 2.0 need timm)
 ```shell
 pip install timm==0.9.10
 ```
-4. Run the example:（Attention: If you use model in local path, please update the model code to the latest version on Hugging Face.)
-```shell
-python examples/minicpmv_example.py 
+3. Run the example(for image):
+```python
+from transformers import AutoTokenizer
+from PIL import Image
+from vllm import LLM, SamplingParams
+
+MODEL_NAME = "openbmb/MiniCPM-V-2_6"
+# Also available for previous models
+# MODEL_NAME = "openbmb/MiniCPM-Llama3-V-2_5"
+# MODEL_NAME = "HwwwH/MiniCPM-V-2"
+
+image = Image.open("xxx.png").convert("RGB")
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=True)
+llm = LLM(
+    model=MODEL_NAME,
+    trust_remote_code=True,
+    gpu_memory_utilization=1,
+    max_model_len=2048
+)
+
+messages = [{
+    "role":
+    "user",
+    "content":
+    # Number of images
+    "(<image>./</image>)" + \
+    "\nWhat is the content of this image?" 
+}]
+prompt = tokenizer.apply_chat_template(
+    messages,
+    tokenize=False,
+    add_generation_prompt=True
+)
+
+# Single Inference
+inputs = {
+    "prompt": prompt,
+    "multi_modal_data": {
+        "image": image
+        # Multi images, the number of images should be equal to that of `(<image>./</image>)`
+        # "image": [image, image] 
+    },
+}
+# Batch Inference
+# inputs = [{
+#     "prompt": prompt,
+#     "multi_modal_data": {
+#         "image": image
+#     },
+# } for _ in 2]
+
+
+# 2.6
+stop_tokens = ['<|im_end|>', '<|endoftext|>']
+stop_token_ids = [tokenizer.convert_tokens_to_ids(i) for i in stop_tokens]
+# 2.0
+# stop_token_ids = [tokenizer.eos_id]
+# 2.5
+# stop_token_ids = [tokenizer.eos_id, tokenizer.eot_id]
+
+sampling_params = SamplingParams(
+    stop_token_ids=stop_token_ids, 
+    use_beam_search=True,
+    temperature=0, 
+    best_of=3,
+    max_tokens=1024
+)
+
+outputs = llm.generate(inputs, sampling_params=sampling_params)
+
+print(outputs[0].outputs[0].text)
 ```
+4. click [here](https://modelbest.feishu.cn/wiki/C2BWw4ZP0iCDy7kkCPCcX2BHnOf?from=from_copylink) if you want to use it with *video*, or get more details about `vLLM`.
 </details>
 
 ## Fine-tuning
@@ -1577,12 +1641,6 @@ This project is developed by the following institutions:
 - <img src="assets/modelbest.png" width="28px"> [ModelBest](https://modelbest.cn/)
 - <img src="assets/zhihu.webp" width="28px"> [Zhihu](https://www.zhihu.com/ )
 
-## Other Multimodal Projects from Our Team <!-- omit in toc -->
-
-👏 Welcome to explore other multimodal projects of our team:
-
-[VisCPM](https://github.com/OpenBMB/VisCPM/tree/main) | [RLHF-V](https://github.com/RLHF-V/RLHF-V) | [LLaVA-UHD](https://github.com/thunlp/LLaVA-UHD) | [RLAIF-V](https://github.com/RLHF-V/RLAIF-V)
-
 ## 🌟 Star History <!-- omit in toc -->
 
 
@@ -1611,33 +1669,22 @@ This project is developed by the following institutions:
   />
 </picture> -->
 
+## Key Techniques and Other Multimodal Projects <!-- omit in toc -->
+
+👏 Welcome to explore key techniques of MiniCPM-V and other multimodal projects of our team:
+
+[VisCPM](https://github.com/OpenBMB/VisCPM/tree/main) | [RLHF-V](https://github.com/RLHF-V/RLHF-V) | [LLaVA-UHD](https://github.com/thunlp/LLaVA-UHD) | [RLAIF-V](https://github.com/RLHF-V/RLAIF-V)
+
+
 ## Citation <!-- omit in toc -->
 
 If you find our model/code/paper helpful, please consider cite our papers 📝 and star us ⭐️！
 
 ```bib
-@article{yu2023rlhf,
-  title={Rlhf-v: Towards trustworthy mllms via behavior alignment from fine-grained correctional human feedback},
-  author={Yu, Tianyu and Yao, Yuan and Zhang, Haoye and He, Taiwen and Han, Yifeng and Cui, Ganqu and Hu, Jinyi and Liu, Zhiyuan and Zheng, Hai-Tao and Sun, Maosong and others},
-  journal={arXiv preprint arXiv:2312.00849},
-  year={2023}
-}
-@article{viscpm,
-    title={Large Multilingual Models Pivot Zero-Shot Multimodal Learning across Languages}, 
-    author={Jinyi Hu and Yuan Yao and Chongyi Wang and Shan Wang and Yinxu Pan and Qianyu Chen and Tianyu Yu and Hanghao Wu and Yue Zhao and Haoye Zhang and Xu Han and Yankai Lin and Jiao Xue and Dahai Li and Zhiyuan Liu and Maosong Sun},
-    journal={arXiv preprint arXiv:2308.12038},
-    year={2023}
-}
-@article{xu2024llava-uhd,
-  title={{LLaVA-UHD}: an LMM Perceiving Any Aspect Ratio and High-Resolution Images},
-  author={Xu, Ruyi and Yao, Yuan and Guo, Zonghao and Cui, Junbo and Ni, Zanlin and Ge, Chunjiang and Chua, Tat-Seng and Liu, Zhiyuan and Huang, Gao},
-  journal={arXiv preprint arXiv:2403.11703},
-  year={2024}
-}
-@article{yu2024rlaifv,
-  title={RLAIF-V: Aligning MLLMs through Open-Source AI Feedback for Super GPT-4V Trustworthiness}, 
-  author={Yu, Tianyu and Zhang, Haoye and Yao, Yuan and Dang, Yunkai and Chen, Da and Lu, Xiaoman and Cui, Ganqu and He, Taiwen and Liu, Zhiyuan and Chua, Tat-Seng and Sun, Maosong},
-  journal={arXiv preprint arXiv:2405.17220},
-  year={2024}
+@article{yao2024minicpmv,
+      title={MiniCPM-V: A GPT-4V Level MLLM on Your Phone}, 
+      author={Yao, Yuan and Yu, Tianyu and Zhang, Ao and Wang, Chongyi and Cui, Junbo and Zhu, Hongji and Cai, Tianchi and Li, Haoyu and Zhao, Weilin and He, Zhihui and Chen, Qianyu and Zhou, Huarong and Zou, Zhensheng and Zhang, Haoye and Hu, Shengding and Zheng, Zhi and Zhou, Jie and Cai, Jie and Han, Xu and Zeng, Guoyang and Li, Dahai and Liu, Zhiyuan and Sun, Maosong},
+      journal={arXiv preprint 2408.01800},
+      year={2024},
 }
 ```
