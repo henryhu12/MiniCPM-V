@@ -23,7 +23,7 @@
 
 <p align="center">
    MiniCPM-V 4.5 <a href="https://huggingface.co/openbmb/MiniCPM-V-4_5">🤗</a> <a href="http://101.126.42.235:30910/">🤖</a> | MiniCPM-o 2.6 <a href="https://huggingface.co/openbmb/MiniCPM-o-2_6">🤗</a>  <a href="https://minicpm-omni-webdemo-us.modelbest.cn/"> 🤖</a> | <a href="https://github.com/OpenSQZ/MiniCPM-V-Cookbook">🍳 Cookbook</a> | 
-  📄 Technical Report (Coming Soon)
+  <a href="https://huggingface.co/papers/2509.18154">📄 Technical Report</a>
 </p>
 
 </div>
@@ -41,6 +41,10 @@
 ## News <!-- omit in toc -->
 
 #### 📌 Pinned
+
+* [2025.09.18] 📢📢📢 MiniCPM-V 4.5 technical report is now released! See [here](./docs/MiniCPM_V_4_5_Technical_Report.pdf).
+
+* [2025.09.01] ⭐️⭐️⭐️ MiniCPM-V 4.5 has been officially supported by [llama.cpp](https://github.com/ggml-org/llama.cpp/pull/15575), [vLLM](https://github.com/vllm-project/vllm/pull/23586), and [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory/pull/9022). You are welcome to use it directly through these official channels! Support for additional frameworks such as [Ollama](https://github.com/ollama/ollama/pull/12078) and [SGLang](https://github.com/sgl-project/sglang/pull/9610) is actively in progress.
 
 * [2025.08.26] 🔥🔥🔥 We open-source MiniCPM-V 4.5, which outperforms GPT-4o-latest, Gemini-2.0 Pro, and Qwen2.5-VL 72B. It advances popular capabilities of MiniCPM-V, and brings useful new features. Try it now!
 
@@ -109,6 +113,7 @@
 
 
 - [MiniCPM-V 4.5](#minicpm-v-45)
+  - [Inference Efficiency](#inference-efficiency)
 - [MiniCPM-o 2.6](#minicpm-o-26)
 - [MiniCPM-V \& o Cookbook](#minicpm-v--o-cookbook)
 - [Chat with Our Demo on Gradio 🤗](#chat-with-our-demo-on-gradio-)
@@ -2064,11 +2069,9 @@ As an experimental trial, we find MiniCPM-o 2.6 has notable limitations worth fu
 
 ## Model License <!-- omit in toc -->
 
-* This repository is released under the [Apache-2.0](https://github.com/OpenBMB/MiniCPM/blob/main/LICENSE) License. 
+* The MiniCPM-o/V model weights and code are open-sourced under the [Apache-2.0](https://github.com/OpenBMB/MiniCPM-V/blob/main/LICENSE) license.
 
-* The usage of MiniCPM-o/V model weights must strictly follow [MiniCPM Model License.md](https://github.com/OpenBMB/MiniCPM/blob/main/MiniCPM%20Model%20License.md).
-
-* The models and weights of MiniCPM are completely free for academic research. after filling out a ["questionnaire"](https://modelbest.feishu.cn/share/base/form/shrcnpV5ZT9EJ6xYjh3Kx0J6v8g) for registration, are also available for free commercial use.  
+* To help us better understand and support our users, we would deeply appreciate it if you could consider optionally filling out a brief registration ["questionnaire"](https://modelbest.feishu.cn/share/base/form/shrcnpV5ZT9EJ6xYjh3Kx0J6v8g).
 
 ## Statement <!-- omit in toc -->
 
@@ -2087,13 +2090,13 @@ This project is developed by the following institutions:
 ## 🌟 Star History <!-- omit in toc -->
 
 
-<!-- <table align="center">
+<table align="center">
     <p align="center">
-      <img src="assets/star_history.svg"/>
+      <img src="assets/star-history-25-09-02.png"/>
     </p>
-</table> -->
+</table>
 
-<picture>
+<!-- <picture>
   <source
     media="(prefers-color-scheme: dark)"
     srcset="
@@ -2110,7 +2113,7 @@ This project is developed by the following institutions:
     alt="Star History Chart"
     src="https://api.star-history.com/svg?repos=OpenBMB/MiniCPM-o&type=Date"
   />
-</picture>
+</picture> -->
 
 ## Key Techniques and Other Multimodal Projects <!-- omit in toc -->
 

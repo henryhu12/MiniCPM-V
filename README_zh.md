@@ -20,7 +20,7 @@
   <br>
   <p align="center">
   MiniCPM-V 4.5 <a href="https://huggingface.co/openbmb/MiniCPM-V-4_5">🤗</a>  <a href="http://101.126.42.235:30910/"> 🤖</a> | MiniCPM-o 2.6 <a href="https://huggingface.co/openbmb/MiniCPM-o-2_6">🤗</a> <a href="https://minicpm-omni-webdemo-us.modelbest.cn/"> 🤖</a> | 
-  📄 技术报告 [即将推出]
+    <a href="https://huggingface.co/papers/2509.18154">📄 技术报告</a>
 </p>
 
 </div>
@@ -36,6 +36,10 @@
 ## 更新日志 <!-- omit in toc -->
 
 #### 📌 置顶
+
+* [2025.09.18] 📢📢📢 MiniCPM-V 4.5 技术报告已发布! 欢迎点击[这里](./docs/MiniCPM_V_4_5_Technical_Report.pdf)查看.
+
+* [2025.09.01] ⭐️⭐️⭐️ MiniCPM-V 4.5 已被 [llama.cpp](https://github.com/ggml-org/llama.cpp/pull/15575)、[vLLM](https://github.com/vllm-project/vllm/pull/23586) 和 [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory/pull/9022) 等框架官方支持，欢迎从官方入口直接使用！更多框架如 [Ollama](https://github.com/ollama/ollama/pull/12078) 和 [SGLang](https://github.com/sgl-project/sglang/pull/9610) 的官方支持正在持续适配中！
 
 * [2025.08.26] 🔥🔥🔥 我们开源了 MiniCPM-V 4.5，其视觉性能超越了 GPT-4o-latest、Gemini-2.0 Pro 和 Qwen2.5-VL 72B。它不仅延续并强化了 MiniCPM-V 的热门能力，还带来了诸多实用的新功能。欢迎试用！
 
@@ -163,7 +167,7 @@
 </div>
 
 
-### 推理效率
+### 推理效率 <!-- omit in toc -->
 
 
 **OpenCompass**
@@ -1202,9 +1206,6 @@ MiniCPM-o 2.6 可以通过多种方式轻松使用：(1) [llama.cpp](https://git
 </div>
 
 
-<details>
-<summary>Click to view more details of MiniCPM-V 2.6</summary>
-
 
 ## 历史版本模型  <!-- omit in toc -->
 
@@ -1963,9 +1964,9 @@ pip install vllm
 
 ## 模型协议 <!-- omit in toc -->
 
-* 本仓库中代码依照 [Apache-2.0](https://github.com/OpenBMB/MiniCPM/blob/main/LICENSE) 协议开源
-* MiniCPM-o/V 模型权重的使用则需要遵循 [“MiniCPM模型商用许可协议.md”](https://github.com/OpenBMB/MiniCPM/blob/main/MiniCPM%E6%A8%A1%E5%9E%8B%E5%95%86%E7%94%A8%E8%AE%B8%E5%8F%AF%E5%8D%8F%E8%AE%AE.md)。
-* MiniCPM 模型权重对学术研究完全开放，在填写[“问卷”](https://modelbest.feishu.cn/share/base/form/shrcnpV5ZT9EJ6xYjh3Kx0J6v8g)进行登记后亦允许免费商业使用。
+* 本仓库中代码依照 [Apache-2.0](https://github.com/OpenBMB/MiniCPM-V/blob/main/LICENSE)  协议开源
+
+* 为帮助我们进一步了解并支持社区用户，若您能考虑填写一份简短的登记问卷，我们将深表感谢。 ["questionnaire"](https://modelbest.feishu.cn/share/base/form/shrcnpV5ZT9EJ6xYjh3Kx0J6v8g).
 
 ## 声明 <!-- omit in toc -->
 
@@ -1984,13 +1985,13 @@ pip install vllm
 ## 🌟 Star History <!-- omit in toc -->
 
 
-<!-- <table align="center">
+<table align="center">
     <p align="center">
-      <img src="assets/star_history.svg"/>
+      <img src="assets/star-history-25-09-02.png"/>
     </p>
-</table> -->
+</table>
 
-<picture>
+<!-- <picture>
   <source
     media="(prefers-color-scheme: dark)"
     srcset="
@@ -2007,7 +2008,7 @@ pip install vllm
     alt="Star History Chart"
     src="https://api.star-history.com/svg?repos=OpenBMB/MiniCPM-o&type=Date"
   />
-</picture>
+</picture> -->
 
 ## 支持技术和其他多模态项目 <!-- omit in toc -->
 
