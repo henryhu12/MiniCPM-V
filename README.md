@@ -1097,7 +1097,7 @@ Advancing popular visual capabilities from MiniCPM-V series, MiniCPM-o 4.5 can p
 </td>
 <td width="30%" valign="top">
 
-<video src="https://github.com/user-attachments/assets/4ec0185e-d111-4706-81f0-a9371c64f1f1" controls></video>
+<video src="https://github.com/user-attachments/assets/3011b07d-e3f4-4e2c-9020-37f7e364b7f3" controls></video>
 
 </td>
 </tr>
@@ -1120,7 +1120,7 @@ Advancing popular visual capabilities from MiniCPM-V series, MiniCPM-o 4.5 can p
 </td>
 <td valign="top">
 
-<video src="https://github.com/user-attachments/assets/f5557cfc-9e9a-4ad8-9677-375baecd5611" controls></video>
+<video src="https://github.com/user-attachments/assets/6b4ef67d-8095-40df-a061-99ea8db3b18e" controls></video>
 
 </td>
 </tr>
@@ -1146,7 +1146,7 @@ Advancing popular visual capabilities from MiniCPM-V series, MiniCPM-o 4.5 can p
 </td>
 <td width="30%" valign="top">
 
-<video src="https://github.com/user-attachments/assets/03b45526-769e-4a15-bd68-4f138c01ded8" controls></video>
+<video src="https://github.com/user-attachments/assets/b8b85a29-e623-4f45-bf95-4d43582e836c" controls></video>
 
 </td>
 </tr>
@@ -1169,7 +1169,7 @@ Advancing popular visual capabilities from MiniCPM-V series, MiniCPM-o 4.5 can p
 </td>
 <td valign="top">
 
-<video src="https://github.com/user-attachments/assets/0c34087d-4fa7-43df-8f76-36d38e988718" controls></video>
+<video src="https://github.com/user-attachments/assets/49611c3c-d134-40f9-acf2-7a0a442d3fd2" controls></video>
 
 </td>
 </tr>
