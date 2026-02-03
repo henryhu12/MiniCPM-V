@@ -1097,7 +1097,7 @@ Advancing popular visual capabilities from MiniCPM-V series, MiniCPM-o 4.5 can p
 </td>
 <td width="30%" valign="top">
 
-<video src="https://raw.githubusercontent.com/OpenBMB/MiniCPM-o/main/assets/minicpmo4_5/elon_musk_ref.mp4" controls></video>
+<video src="https://github.com/user-attachments/assets/4ec0185e-d111-4706-81f0-a9371c64f1f1" controls></video>
 
 </td>
 </tr>
@@ -1120,7 +1120,7 @@ Advancing popular visual capabilities from MiniCPM-V series, MiniCPM-o 4.5 can p
 </td>
 <td valign="top">
 
-<video src="https://raw.githubusercontent.com/OpenBMB/MiniCPM-o/main/assets/minicpmo4_5/elon_musk_response.mp4" controls></video>
+<video src="https://github.com/user-attachments/assets/f5557cfc-9e9a-4ad8-9677-375baecd5611" controls></video>
 
 </td>
 </tr>
@@ -1146,7 +1146,7 @@ Advancing popular visual capabilities from MiniCPM-V series, MiniCPM-o 4.5 can p
 </td>
 <td width="30%" valign="top">
 
-<video src="https://raw.githubusercontent.com/OpenBMB/MiniCPM-o/main/assets/minicpmo4_5/assistant_ref.mp4" controls></video>
+<video src="https://github.com/user-attachments/assets/03b45526-769e-4a15-bd68-4f138c01ded8" controls></video>
 
 </td>
 </tr>
@@ -1169,7 +1169,7 @@ Advancing popular visual capabilities from MiniCPM-V series, MiniCPM-o 4.5 can p
 </td>
 <td valign="top">
 
-<video src="https://raw.githubusercontent.com/OpenBMB/MiniCPM-o/main/assets/minicpmo4_5/assistant_response.mp4" controls></video>
+<video src="https://github.com/user-attachments/assets/0c34087d-4fa7-43df-8f76-36d38e988718" controls></video>
 
 </td>
 </tr>
