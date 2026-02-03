@@ -879,7 +879,7 @@ Advancing popular visual capabilities from MiniCPM-V series, MiniCPM-o 4.5 can p
   <th nowrap="nowrap"><b>Speech CMMLU</b></th>
 </tr>
 <tr>
-  <td nowrap="nowrap" align="left">kimi-audio</td>
+  <td nowrap="nowrap" align="left">Kimi-Audio</td>
   <td align="center"><b>0.6</b></td>
   <td align="center">2.6</td>
   <td align="center">6.3</td>
