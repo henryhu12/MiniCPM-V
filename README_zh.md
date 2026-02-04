@@ -190,6 +190,50 @@ MiniCPM-o 4.5 是 MiniCPM-o 系列中最新且性能最强的模型。该模型�
   <td align="center"><b>23.9<sup>*</sup></b></td>
 </tr>
 <tr>
+  <td nowrap="nowrap" align="left">Gemini2.0-Pro</td>
+  <td align="center">73.3</td>
+  <td align="center">83.0</td>
+  <td align="center">83.0</td>
+  <td align="center">71.3</td>
+  <td align="center">70.4</td>
+  <td align="center">72.6</td>
+  <td align="center">68.5</td>
+  <td align="center">49.8</td>
+  <td align="center">84.8</td>
+  <td align="center">863</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+</tr>
+<tr>
+  <td nowrap="nowrap" align="left">GPT-4o</td>
+  <td align="center">75.4</td>
+  <td align="center">86.0</td>
+  <td align="center"><ins>86.0</ins></td>
+  <td align="center">71.6</td>
+  <td align="center">76.9</td>
+  <td align="center">72.9</td>
+  <td align="center">70.2</td>
+  <td align="center">57.0</td>
+  <td align="center">86.3</td>
+  <td align="center">822</td>
+  <td align="center"><b>85.6<sup>*</sup></b></td>
+  <td align="center">93.0</td>
+  <td align="center">66.7<sup>*</sup></td>
+  <td align="center">64.6</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+  <td align="center">-</td>
+</tr>
+<tr>
   <td nowrap="nowrap" align="left">InternVL-3.5-8B</td>
   <td align="center">75.8</td>
   <td align="center">79.5</td>
@@ -245,7 +289,7 @@ MiniCPM-o 4.5 是 MiniCPM-o 系列中最新且性能最强的模型。该模型�
   <td align="center">59.7</td>
   <td align="center">85.2</td>
   <td align="center"><ins>880</ins><sup>*</sup></td>
-  <td align="center"><b>84.1<sup>*</sup></b></td>
+  <td align="center"><ins>84.1<sup>*</sup></ins></td>
   <td align="center"><ins>95.4</ins><sup>*</sup></td>
   <td align="center"><b>70.4<sup>*</sup></b></td>
   <td align="center">65.7<sup>*</sup></td>
@@ -267,7 +311,7 @@ MiniCPM-o 4.5 是 MiniCPM-o 系列中最新且性能最强的模型。该模型�
   <td align="center"><b>63.2</b></td>
   <td align="center"><ins>87.6</ins></td>
   <td align="center">876</td>
-  <td align="center"><ins>83.8</ins></td>
+  <td align="center">83.8</td>
   <td align="center">94.7</td>
   <td align="center">69.7</td>
   <td align="center"><ins>66.3</ins></td>
