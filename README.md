@@ -259,15 +259,15 @@ Advancing popular visual capabilities from MiniCPM-V series, MiniCPM-o 4.5 can p
   <td align="center">57.0</td>
   <td align="center">86.3</td>
   <td align="center">822</td>
-  <td align="center"><b>85.6<sup>*</sup></b></td>
+  <td align="center">77.4</td>
   <td align="center">93.0</td>
   <td align="center">66.7<sup>*</sup></td>
   <td align="center">64.6</td>
-  <td align="center">-</td>
-  <td align="center">-</td>
-  <td align="center">-</td>
-  <td align="center">-</td>
-  <td align="center">-</td>
+  <td align="center">70.1<sup>*</sup></td>
+  <td align="center">70.5<sup>*</sup></td>
+  <td align="center">8.1<sup>*</sup></td>
+  <td align="center">4.2<sup>*</sup></td>
+  <td align="center">25.0<sup>*</sup></td>
 </tr>
 <tr>
   <td nowrap="nowrap" align="left">InternVL-3.5-8B</td>
@@ -325,7 +325,7 @@ Advancing popular visual capabilities from MiniCPM-V series, MiniCPM-o 4.5 can p
   <td align="center">59.7</td>
   <td align="center">85.2</td>
   <td align="center"><ins>880</ins><sup>*</sup></td>
-  <td align="center"><ins>84.1<sup>*</sup></ins></td>
+  <td align="center"><b>84.1<sup>*</sup></b></td>
   <td align="center"><ins>95.4</ins><sup>*</sup></td>
   <td align="center"><b>70.4<sup>*</sup></b></td>
   <td align="center">65.7<sup>*</sup></td>
@@ -347,7 +347,7 @@ Advancing popular visual capabilities from MiniCPM-V series, MiniCPM-o 4.5 can p
   <td align="center"><b>63.2</b></td>
   <td align="center"><ins>87.6</ins></td>
   <td align="center">876</td>
-  <td align="center">83.8</td>
+  <td align="center"><ins>83.8</ins></td>
   <td align="center">94.7</td>
   <td align="center">69.7</td>
   <td align="center"><ins>66.3</ins></td>
