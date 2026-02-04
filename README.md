@@ -113,6 +113,7 @@
   - [Model Initialization](#model-initialization)
   - [Duplex Omni Mode](#duplex-omni-mode)
   - [Simplex Omni Mode](#simplex-omni-mode)
+  - [Simplex Realtime Speech Conversation Mode](#simplex-realtime-speech-conversation-mode)
   - [Speech and Audio Mode](#speech-and-audio-mode)
   - [Visual Understanding](#visual-understanding)
   - [Structured Content Input](#structured-content-input)
@@ -2088,8 +2089,166 @@ else:
 
 </details>
 
+### Simplex Realtime Speech Conversation Mode <!-- omit in toc -->
 
-### Speech and Audio Mode
+<details>
+<summary>Click to show simplex mode realtime speech conversation API usage.</summary>
+
+First, make sure you have all dependencies, especially `minicpmo-utils[all]>=1.0.2`:
+```bash
+pip install "transformers==4.51.0" accelerate "torch>=2.3.0,<=2.8.0" "torchaudio<=2.8.0" "minicpmo-utils[all]>=1.0.2"
+```
+
+```python
+import librosa
+import numpy as np
+import torch
+import soundfile as sf
+
+model = ...
+
+# Set reference audio for voice style
+ref_audio_path = "ref_audio_path"
+ref_audio, _ = librosa.load(ref_audio_path, sr=16000, mono=True)
+
+# Example system msg for English Conversation
+sys_msg = {
+  "role": "system",
+  "content": [
+    "Clone the voice in the provided audio prompt.",
+    ref_audio,
+    "Please assist users while maintaining this voice style. Please answer the user's questions seriously and in a high quality. Please chat with the user in a highly human-like and oral style. You are a helpful assistant developed by ModelBest: MiniCPM-Omni"
+  ]
+}
+
+# Example system msg for Chinese Conversation
+sys_msg = {
+  "role": "system",
+  "content": [
+    "模仿输入音频中的声音特征。",
+    ref_audio,
+    "你的任务是用这种声音模式来当一个助手。请认真、高质量地回复用户的问题。请用高自然度的方式和用户聊天。你是由面壁智能开发的人工智能助手：面壁小钢炮。"
+  ]
+}
+
+# You can use each type of system prompt mentioned above in streaming speech conversation
+
+# Reset state
+model.init_tts(streaming=True)
+model.reset_session(reset_token2wav_cache=True)
+model.init_token2wav_cache(prompt_speech_16k=ref_audio)
+
+session_id = "demo"
+
+# First, prefill system turn
+model.streaming_prefill(
+    session_id=session_id,
+    msgs=[sys_msg],
+    omni_mode=False,
+    is_last_chunk=True,
+)
+
+# Here we simulate realtime speech conversation by splitting whole user input audio into chunks of 1s.
+user_audio, _ = librosa.load("user_audio.wav", sr=16000, mono=True)
+
+IN_SAMPLE_RATE = 16000 # input audio sample rate, fixed value
+CHUNK_SAMPLES = IN_SAMPLE_RATE # sample
+OUT_SAMPLE_RATE = 24000 # output audio sample rate, fixed value
+
+total_samples = len(user_audio)
+num_chunks = (total_samples + CHUNK_SAMPLES - 1) // CHUNK_SAMPLES
+
+for chunk_idx in range(num_chunks):
+    start = chunk_idx * CHUNK_SAMPLES
+    end = min((chunk_idx + 1) * CHUNK_SAMPLES, total_samples)
+    chunk_audio = user_audio[start:end]
+    
+    is_last_chunk = (chunk_idx == num_chunks - 1)
+    
+    user_msg = {"role": "user", "content": [chunk_audio]}
+    
+    # For each 1s audio chunk, perform streaming_prefill once to reduce first-token latency
+    model.streaming_prefill(
+        session_id=session_id,
+        msgs=[user_msg],
+        omni_mode=False,
+        is_last_chunk=is_last_chunk,
+    )
+
+# Let model generate response in a streaming manner
+generate_audio = True
+iter_gen = model.streaming_generate(
+    session_id=session_id,
+    generate_audio=generate_audio,
+    use_tts_template=True,
+    enable_thinking=False,
+    do_sample=True,
+    max_new_tokens=512,
+    length_penalty=1.1, # For realtime speech conversation mode, we suggest length_penalty=1.1 to improve response content
+)
+
+audios = []
+text = ""
+
+if generate_audio:
+    for wav_chunk, text_chunk in iter_gen:
+        audios.append(wav_chunk)
+        text += text_chunk
+
+    generated_waveform = torch.cat(audios, dim=-1)[0]
+    sf.write(output_audio_path, generated_waveform.cpu().numpy(), samplerate=24000)
+
+    print("Text:", text)
+    print("Audio saved to output.wav")
+else:
+    for text_chunk, is_finished in iter_gen:
+        text += text_chunk
+    print("Text:", text)
+
+# Now we can prefill the following user turns and generate next turn response...
+
+```
+
+</details>
+
+
+#### Speech Conversation as a Versatile and Vibe AI Assistant <!-- omit in toc -->
+
+Built on carefully designed post-training data and professional voice-actor recordings, `MiniCPM-o-4.5` can also function as an AI voice assistant. It delivers high-quality spoken interaction out of the box. It produces a sweet and expressive voice with natural prosody, including appropriate rhythm, stress, and pauses, giving a strong sense of liveliness in casual conversation. It also supports storytelling and narrative speech with coherent and engaging delivery. Moreover, it enables advanced voice instruction control. like emotional tone, word-level emphasis.
+
+<details>
+<summary>Click to show AI assistant conversation code.</summary>
+
+```python
+import librosa
+
+# Set reference audio for voice style
+ref_audio_path = "assets/HT_ref_audio.wav"
+ref_audio, _ = librosa.load(ref_audio_path, sr=16000, mono=True)
+
+# For Chinese Conversation
+sys_msg = {
+  "role": "system",
+  "content": [
+    "模仿输入音频中的声音特征。",
+    ref_audio,
+    "你的任务是用这种声音模式来当一个助手。请认真、高质量地回复用户的问题。请用高自然度的方式和用户聊天。你是由面壁智能开发的人工智能助手：面壁小钢炮。"
+  ]
+}
+
+# For English Conversation
+sys_msg = {
+  "role": "system",
+  "content": [
+    "Clone the voice in the provided audio prompt.",
+    ref_audio,
+    "Please assist users while maintaining this voice style. Please answer the user's questions seriously and in a high quality. Please chat with the user in a highly human-like and oral style. You are a helpful assistant developed by ModelBest: MiniCPM-Omni."
+  ]
+}
+```
+
+</details>
+
 
 #### General Speech Conversation with Custom Voice and Custom System Profile <!-- omit in toc -->
 
@@ -2100,9 +2259,6 @@ MiniCPM-o-4.5 can role-play as a specific character based on an audio prompt and
 
 ```python
 import librosa
-
-model = ...
-model.init_tts(streaming=False)
 
 # Set reference audio for voice cloning
 ref_audio_path = "assets/system_ref_audio.wav"
@@ -2139,7 +2295,6 @@ sys_msg = {
   ]
 }
 
-
 # For Chinese Conversation with text profile
 sys_msg = {
   "role": "system",
@@ -2150,115 +2305,12 @@ sys_msg = {
   ]
 }
 
-
-# Round 1
-user_audio, _ = librosa.load("user_question.wav", sr=16000, mono=True)
-user_msg = {"role": "user", "content": [user_audio]}
-
-msgs = [sys_msg, user_msg]
-
-res = model.chat(
-    msgs=msgs,
-    do_sample=True,
-    max_new_tokens=512,
-    use_tts_template=True,
-    generate_audio=True,
-    temperature=0.7,
-    output_audio_path="result_roleplay_round_1.wav",
-)
-print("Round 1:", res)
-
-# Round 2 (multi-turn conversation)
-msgs.append({"role": "assistant", "content": res})
-user_audio_2, _ = librosa.load("user_question_2.wav", sr=16000, mono=True)
-msgs.append({"role": "user", "content": [user_audio_2]})
-
-res = model.chat(
-    msgs=msgs,
-    do_sample=True,
-    max_new_tokens=512,
-    use_tts_template=True,
-    generate_audio=True,
-    temperature=0.7,
-    output_audio_path="result_roleplay_round_2.wav",
-)
-print("Round 2:", res)
 ```
 
 </details>
 
 
-#### Speech Conversation as a Versatile and Vibe AI Assistant <!-- omit in toc -->
-
-Built on carefully designed post-training data and professional voice-actor recordings, `MiniCPM-o-4.5` can also function as an AI voice assistant. It delivers high-quality spoken interaction out of the box. It produces a sweet and expressive voice with natural prosody, including appropriate rhythm, stress, and pauses, giving a strong sense of liveliness in casual conversation. It also supports storytelling and narrative speech with coherent and engaging delivery. Moreover, it enables advanced voice instruction control. like emotional tone, word-level emphasis.
-
-<details>
-<summary>Click to show AI assistant conversation code.</summary>
-
-```python
-import librosa
-
-model = ...
-model.init_tts(streaming=False)
-
-# Set reference audio for voice style
-ref_audio_path = "assets/HT_ref_audio.wav"
-ref_audio, _ = librosa.load(ref_audio_path, sr=16000, mono=True)
-
-# For Chinese Conversation
-sys_msg = {
-  "role": "system",
-  "content": [
-    "模仿输入音频中的声音特征。",
-    ref_audio,
-    "你的任务是用这种声音模式来当一个助手。请认真、高质量地回复用户的问题。请用高自然度的方式和用户聊天。你是由面壁智能开发的人工智能助手：面壁小钢炮。"
-  ]
-}
-
-# For English Conversation
-sys_msg = {
-  "role": "system",
-  "content": [
-    "Clone the voice in the provided audio prompt.",
-    ref_audio,
-    "Please assist users while maintaining this voice style. Please answer the user's questions seriously and in a high quality. Please chat with the user in a highly human-like and oral style. You are a helpful assistant developed by ModelBest: MiniCPM-Omni."
-  ]
-}
-
-
-# Load user's audio question
-user_audio, _ = librosa.load("user_question.wav", sr=16000, mono=True)
-user_question = {"role": "user", "content": [user_audio]}
-
-# Round 1
-msgs = [sys_msg, user_question]
-res = model.chat(
-    msgs=msgs,
-    do_sample=True,
-    max_new_tokens=512,
-    use_tts_template=True,
-    generate_audio=True,
-    temperature=0.7,
-    output_audio_path="result_assistant_round_1.wav",
-)
-
-# Round 2
-msgs.append({"role": "assistant", "content": res})
-user_audio_2, _ = librosa.load("user_question_2.wav", sr=16000, mono=True)
-msgs.append({"role": "user", "content": [user_audio_2]})
-res = model.chat(
-    msgs=msgs,
-    do_sample=True,
-    max_new_tokens=512,
-    use_tts_template=True,
-    generate_audio=True,
-    temperature=0.3,
-    output_audio_path="result_assistant_round_2.wav",
-)
-print(res)
-```
-
-</details>
+### Speech and Audio Mode  <!-- omit in toc -->
 
 #### Zero-shot Text-to-speech (TTS) <!-- omit in toc -->
 
@@ -2308,121 +2360,6 @@ res = model.chat(
     temperature=0.1,
     output_audio_path="result_voice_cloning.wav",
 )
-```
-
-</details>
-
-
-#### Realtime Speech Conversation <!-- omit in toc -->
-
-<details>
-<summary>Click to show realtime speech conversation code.</summary>
-
-```python
-import librosa
-import numpy as np
-import torch
-import soundfile as sf
-
-model = ...
-
-# Set reference audio for voice style
-ref_audio_path = "ref_audio_path"
-ref_audio, _ = librosa.load(ref_audio_path, sr=16000, mono=True)
-
-# For Chinese Conversation
-sys_msg = {
-  "role": "system",
-  "content": [
-    "模仿输入音频中的声音特征。",
-    ref_audio,
-    "你的任务是用这种声音模式来当一个助手。请认真、高质量地回复用户的问题。请用高自然度的方式和用户聊天。你是由面壁智能开发的人工智能助手：面壁小钢炮。"
-  ]
-}
-
-# You can use each type of system prompt mentioned above in streaming speech conversation
-
-# Reset state
-model.init_tts(streaming=True)
-model.reset_session(reset_token2wav_cache=True)
-model.init_token2wav_cache(prompt_speech_16k=ref_audio)
-
-session_id = "demo"
-msgs = [...]
-# First, prefill system turn
-for msg in msgs:
-    if msg["role"] == "system":
-        model.streaming_prefill(
-            session_id=session_id,
-            msgs=[msg],
-            omni_mode=False,
-            is_last_chunk=False,
-        )
-
-# Here we simulate realtime speech conversation by splitting whole user input audio into chunks of 1s.
-user_audio, _ = librosa.load("user_audio.wav", sr=16000, mono=True)
-
-IN_SAMPLE_RATE = 16000
-CHUNK_SAMPLES = IN_SAMPLE_RATE
-OUT_SAMPLE_RATE = 24000
-
-if user_audio is not None and len(user_audio) > 0:
-    total_samples = len(user_audio)
-    num_chunks = (total_samples + CHUNK_SAMPLES - 1) // CHUNK_SAMPLES
-    
-    for chunk_idx in range(num_chunks):
-        start = chunk_idx * CHUNK_SAMPLES
-        end = min((chunk_idx + 1) * CHUNK_SAMPLES, total_samples)
-        chunk_audio = user_audio[start:end]
-        
-        is_last_chunk = (chunk_idx == num_chunks - 1)
-        
-        user_msg = {"role": "user", "content": [chunk_audio]}
-        
-        # For each 1s audio chunk, perform streaming_prefill once to reduce first-package latency
-        model.streaming_prefill(
-            session_id=session_id,
-            msgs=[user_msg],
-            omni_mode=False,
-            is_last_chunk=is_last_chunk,
-        )
-
-# When VAD actives, make the model generate response in a streaming manner
-# Here we create an iterator without returning anything
-audio_iter = model.streaming_generate(
-    session_id=session_id,
-    generate_audio=True,
-    max_new_tokens=512,
-    do_sample=True,
-    length_penalty=1.1, # For realtime speech conversation mode, we strongly suggest length_penalty=1.1 to improve response content
-)
-
-# Yield 1s-length audio response from the iterator just created in a streaming manner
-audio_chunks = []
-for generated_audio in audio_iter:
-    if generated_audio is None:
-        break
-    
-    if isinstance(generated_audio, tuple):
-        generated_audio = generated_audio[0]
-        if generated_audio is None:
-            break
-    
-    if isinstance(generated_audio, torch.Tensor):
-        wav = generated_audio.detach().cpu().numpy()
-    else:
-        wav = np.asarray(generated_audio)
-    
-    if wav.ndim == 2:
-        wav = wav[0]
-    
-    wav = wav.astype(np.float32)
-    audio_chunks.append(wav)
-
-output_audio_path = "realtime_speech.wav"
-if audio_chunks:
-    full_audio = np.concatenate(audio_chunks, axis=-1)
-    sf.write(output_audio_path, full_audio, OUT_SAMPLE_RATE)
 ```
 
 </details>
