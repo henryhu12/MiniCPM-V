@@ -9,15 +9,15 @@
 
 
 
-<!-- <span style="display: inline-flex; align-items: center; margin-right: 2px;">
+<span style="display: inline-flex; align-items: center; margin-right: 2px;">
   <img src="./assets/wechat.png" alt="WeChat" style="margin-right: 4px;">
   <a href="docs/wechat.md" target="_blank"> WeChat</a> &nbsp;|
 </span>
 &nbsp;
 <span style="display: inline-flex; align-items: center; margin-left: -8px;">
 <img src="./assets/discord.png" alt="Discord" style="margin-right: 4px;">
-  <a href="https://discord.gg/rftuRMbqzf" target="_blank"> Discord</a> &nbsp;
-</span> -->
+  <a href="https://discord.gg/N2RnxGdJ" target="_blank"> Discord</a> &nbsp;
+</span>
 
 
 

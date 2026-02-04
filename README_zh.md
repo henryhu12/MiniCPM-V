@@ -4,6 +4,19 @@
 
 **端侧可用的 Gemini 2.5 Flash 级视觉、语音、全双工多模态实时流式大模型**
 
+  <strong>中文 |
+  [English](./README.md)</strong>
+
+<span style="display: inline-flex; align-items: center; margin-right: 2px;">
+  <img src="./assets/wechat.png" alt="WeChat" style="margin-right: 4px;">
+  <a href="docs/wechat.md" target="_blank"> WeChat</a> &nbsp;|
+</span>
+&nbsp;
+<span style="display: inline-flex; align-items: center; margin-left: -8px;">
+<img src="./assets/discord.png" alt="Discord" style="margin-right: 4px;">
+  <a href="https://discord.gg/N2RnxGdJ" target="_blank"> Discord</a> &nbsp;
+</span>
+
 
 <!-- <br> -->
 <p align="center">
