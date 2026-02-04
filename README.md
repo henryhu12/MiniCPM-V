@@ -2,7 +2,7 @@
 
 <img src="./assets/minicpm_v_and_minicpm_o_title.png" width="500em" ></img> 
 
-**A Gemini 2.5 Flash Level MLLM for Vision, Speech, and Full-Duplex Mulitmodal Live Streaminig on Your Phone**
+**A Gemini 2.5 Flash Level MLLM for Vision, Speech, and Full-Duplex Mulitmodal Live Streaming on Your Phone**
 
   <strong>[中文](./README_zh.md) |
   English</strong>
