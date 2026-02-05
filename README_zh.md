@@ -27,12 +27,16 @@
 
 **MiniCPM-o** 是从 **MiniCPM-V** 升级而来的最新一代端侧多模态大模型（MLLM）系列。该系列模型现已支持图像、视频、文本及音频输入，并能够以端到端的方式提供高质量的文本与语音输出。MiniCPM-o 旨在实现卓越的性能与高效的部署。目前该系列中最受关注的模型包括：
 
-- **MiniCPM-o 4.5**: 🔥🔥🔥 该系列最新、最强大的模型。总参数量 9B，在视觉、语音及全双工多模态实时流式交互方面的表现**接近 Gemini 2.5 Flash**，是目前开源社区中功能最全面、性能最强的模型之一。全新的全双工多模态实时流能力意味着输出流（语音和文本）与实时输入流（视频和音频）互不阻塞。这使得 MiniCPM-o 4.5 能够**在实时全模态对话中实现“边看、边听、边说”**，并能**进行如“主动提醒”等主动交互**。优化后的语音模式支持更自然、更具表现力且更稳定的中英双语实时交互，并支持声音克隆。此外，它还进一步增强了 MiniCPM-V 原有的视觉能力，包括出色的 OCR 能力、低幻觉率、以及多语言支持等。为了让这种全双工多模态实时流体验在 PC 等端侧设备上普及，我们还同步推出了**高性能的 llama.cpp-omni 推理框架以及 WebRTC Demo**。
+- **MiniCPM-o 4.5**: 🔥🔥🔥 该系列最新、最强大的模型。总参数量 9B，在视觉、语音及全双工多模态实时流式交互方面的表现**接近 Gemini 2.5 Flash**，是目前开源社区中功能最全面、性能最强的模型之一。全新的全双工多模态实时流能力意味着输出流（语音和文本）与实时输入流（视频和音频）互不阻塞。这使得 MiniCPM-o 4.5 能够**在实时全模态对话中实现“边看、边听、边说”**，并能**进行如“主动提醒”等主动交互**。优化后的语音模式支持更自然、更具表现力且更稳定的中英双语实时交互，并支持声音克隆。此外，它还进一步增强了 MiniCPM-V 原有的视觉能力，包括出色的 OCR 能力、低幻觉率、以及多语言支持等。为了让这种全双工多模态实时流体验[在 Mac 等端侧设备上本地运行](https://github.com/OpenSQZ/MiniCPM-V-CookBook/blob/main/demo/web_demo/WebRTC_Demo/README.md)，我们还同步推出了**高性能的 llama.cpp-omni 推理框架以及 WebRTC Demo**。
 - **MiniCPM-V 4.0**: ⭐️⭐️⭐️ MiniCPM-V 系列中的一款高效模型。该模型拥有 4B 参数，在 OpenCompass 图像理解榜单中超越了 GPT-4.1-mini-20250414。得益于其轻量级的参数规模和高效的架构设计，MiniCPM-V 4.0 是手机端侧部署的理想选择。
 
 ## 更新日志 <!-- omit in toc -->
 
 #### 📌 置顶
+
+> [!NOTE]
+> [2026.02.06] 🥳 🥳 🥳 MiniCPM-o 4.5 本地运行，即开即用！使用我们全新的官方 Docker 镜像，直接在您**自己的 Mac 上**体验**低延迟全双工实时通话**。[立即体验](https://github.com/OpenSQZ/MiniCPM-V-CookBook/blob/main/demo/web_demo/WebRTC_Demo/README.md)！
+
 * [2026.02.05] 📢📢📢 我们注意到，由于网络状况原因，网页版演示可能会出现显著的延迟问题。我们正在积极工作，将尽快提供实时交互演示版的Docker镜像供本地部署，敬请持续关注！
 * [2026.02.03] 🔥🔥🔥 我们开源了 MiniCPM-o 4.5，该模型视觉和语音能力达到了 Gemini 2.5 Flash 水平，同时支持全双工多模态流式交互。欢迎试用！
 * [2025.09.18] 📢📢📢 MiniCPM-V 4.5 技术报告已发布! 欢迎点击[这里](./docs/MiniCPM_V_4_5_Technical_Report.pdf)查看.
@@ -86,6 +90,7 @@
 - [MiniCPM-V 4.0](#minicpm-v-40)
 - [MiniCPM-V \& o 使用手册](#minicpm-v--o-使用手册)
 - [模型库](#模型库)
+- [本地 Demo 部署](#本地-demo-部署)
 - [简易推理](#简易推理)
   - [模型初始化](#模型初始化)
   - [双工全模态模式](#双工全模态模式)
@@ -1807,6 +1812,14 @@ MiniCPM-V 4.0 是 MiniCPM-V 系列中的一款高效模型。该模型基于 Sig
 | MiniCPM-V 4.0 int4 | GPU | 5 GB  | int4 量化版，更低显存占用。   |  [🤗](https://huggingface.co/openbmb/MiniCPM-V-4-int4) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-V-4-int4) |
 | MiniCPM-V 4.0 AWQ  | GPU | 5 GB  | AWQ 量化版，更低显存占用。   |  [🤗](https://huggingface.co/openbmb/MiniCPM-V-4-AWQ) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-V-4-AWQ) |
 更多[历史版本模型](#legacy-models)
+
+
+## 本地 Demo 部署
+
+
+我们提供了[快速部署指南](https://github.com/OpenSQZ/MiniCPM-V-CookBook/blob/main/demo/web_demo/WebRTC_Demo/README.md)，助您通过我们全新的官方 Docker 镜像，在自己的 Mac 上直接体验低延迟全双工实时通话。
+
+
 
 ## 简易推理
 

@@ -4,6 +4,8 @@
 
 **A Gemini 2.5 Flash Level MLLM for Vision, Speech, and Full-Duplex Mulitmodal Live Streaming on Your Phone**
 
+**🥳 Experience T on you PC/Mac [locally](https://github.com/OpenSQZ/MiniCPM-V-CookBook/blob/main/demo/web_demo/WebRTC_Demo/README.md)!**
+
   <strong>[中文](./README_zh.md) |
   English</strong>
 
@@ -30,7 +32,7 @@
 **MiniCPM-o** is the latest series of on-device multimodal LLMs (MLLMs) ungraded from MiniCPM-V. The models can now take image, video, text, and audio as inputs and provide high-quality text and speech outputs in an end-to-end fashion. The model series is designed for **strong performance and efficient deployment**. The most notable models in the series currently include:
 
 
-- **MiniCPM-o 4.5**: 🔥🔥🔥 The latest and most capable model in the series. With a total of 9B parameters, this end-to-end model **approaches Gemini 2.5 Flash in vision, speech, and full-duplex multimodal live streaming**, making it one of the most versatile and performant models in the open-source community. The new full-duplex multimodal live streaming capability means that the output streams (speech and text), and the real-time input streams (video and audio) do not block each other. This **enables MiniCPM-o 4.5 to see, listen, and speak simultaneously** in a real-time omnimodal conversation, and perform **proactive interactions** such as proactive reminding. The improved voice mode supports bilingual real-time speech conversation in a more natural, expressive, and stable way, and also allows for voice cloning. It also advances MiniCPM-V's visual capabilities such as strong OCR capability, trustworthy behavior and multilingual support, etc. We also rollout a **high-performing llama.cpp-omni inference framework together with a WebRTC Demo**, to bring this full-duplex multimodal live streaming experience available on local devices such as PCs.
+- **MiniCPM-o 4.5**: 🔥🔥🔥 The latest and most capable model in the series. With a total of 9B parameters, this end-to-end model **approaches Gemini 2.5 Flash in vision, speech, and full-duplex multimodal live streaming**, making it one of the most versatile and performant models in the open-source community. The new full-duplex multimodal live streaming capability means that the output streams (speech and text), and the real-time input streams (video and audio) do not block each other. This **enables MiniCPM-o 4.5 to see, listen, and speak simultaneously** in a real-time omnimodal conversation, and perform **proactive interactions** such as proactive reminding. The improved voice mode supports bilingual real-time speech conversation in a more natural, expressive, and stable way, and also allows for voice cloning. It also advances MiniCPM-V's visual capabilities such as strong OCR capability, trustworthy behavior and multilingual support, etc. We also rollout a **high-performing llama.cpp-omni inference framework together with a WebRTC Demo**, to bring this full-duplex multimodal live streaming experience [available on local devices such as Macs](https://github.com/OpenSQZ/MiniCPM-V-CookBook/blob/main/demo/web_demo/WebRTC_Demo/README.md).
 
 - **MiniCPM-V 4.0**: ⭐️⭐️⭐️ An efficient model in the MiniCPM-V series. With a total of 4B parameters, the model surpasses GPT-4.1-mini-20250414 in image understanding on the OpenCompass evaluation. With its small parameter-size and efficient architecure, MiniCPM-V 4.0 is an ideal choice for on-device deployment on the phone.
 
@@ -40,6 +42,10 @@
 ## News <!-- omit in toc -->
 
 #### 📌 Pinned
+
+> [!NOTE]
+> [2026.02.06] 🥳 🥳 🥳 MiniCPM-o 4.5 Local & Ready-to-Run! Experience **low-latency full-duplex communication** directly **on your own Mac** using our new official Docker image. [Try it now](https://github.com/OpenSQZ/MiniCPM-V-CookBook/blob/main/demo/web_demo/WebRTC_Demo/README.md)!
+
 
 * [2026.02.05] 📢📢📢 We note the web demo may experience latency issues due to network conditions. We are working actively to provide a Docker image for local deployment of the real-time interactive Demo as soon as possible. Please stay tuned!
 
@@ -110,12 +116,11 @@
 - [MiniCPM-V 4.0](#minicpm-v-40)
 - [MiniCPM-V \& o Cookbook](#minicpm-v--o-cookbook)
 - [Model Zoo](#model-zoo)
-- [Inference With Transformers](#inference-with-transformers)
+- [Local Interactive Demo](#local-interactive-demo)
+- [Inference with Transformers](#inference-with-transformers)
   - [Model Initialization](#model-initialization)
   - [Duplex Omni Mode](#duplex-omni-mode)
   - [Simplex Omni Mode](#simplex-omni-mode)
-  - [Simplex Realtime Speech Conversation Mode](#simplex-realtime-speech-conversation-mode-)
-  - [Speech and Audio Mode](#speech-and-audio-mode--)
   - [Visual Understanding](#visual-understanding)
   - [Structured Content Input](#structured-content-input)
 - [Supported Frameworks](#supported-frameworks)
@@ -1848,7 +1853,13 @@ Our ecosystem delivers optimal solution for a variety of hardware environments a
 | MiniCPM-V 4.0 int4 | GPU | 5 GB  | The int4 quantized version, lower GPU memory usage.   |  [🤗](https://huggingface.co/openbmb/MiniCPM-V-4-int4) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-V-4-int4) |
 | MiniCPM-V 4.0 AWQ  | GPU | 5 GB  | The AWQ quantized version, lower GPU memory usage.   |  [🤗](https://huggingface.co/openbmb/MiniCPM-V-4-AWQ) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-V-4-AWQ) |
 
-## Inference With Transformers
+## Local Interactive Demo
+
+
+We provide [ready-to-run guidance](https://github.com/OpenSQZ/MiniCPM-V-CookBook/blob/main/demo/web_demo/WebRTC_Demo/README.md) to access the **low-latency full-duplex communication** directly **on your own Mac** using our new official Docker image.
+
+
+## Inference with Transformers
 
 Inference using Hugging Face Transformers on NVIDIA GPUs. Please ensure `transformers==4.51.0` is installed, as other versions may have compatibility issues (under investigation). Requirements tested on Python 3.10:
 
