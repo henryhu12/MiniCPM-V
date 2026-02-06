@@ -2141,11 +2141,12 @@ ref_audio, _ = librosa.load(ref_audio_path, sr=16000, mono=True)
 sys_msg = {
   "role": "system",
   "content": [
-    "克隆所提供音频提示中的声音。",
+    "Clone the voice in the provided audio prompt.",
     ref_audio,
-    "请在保持该音色风格的同时帮助用户。请认真且高质量地回答用户问题。请用高度拟人、口语化的方式与用户聊天。你是由 ModelBest 开发的有用助手：MiniCPM-Omni。"
+    "Please assist users while maintaining this voice style. Please answer the user's questions seriously and in a high quality. Please chat with the user in a highly human-like and oral style. You are a helpful assistant developed by ModelBest: MiniCPM-Omni"
   ]
 }
+
 
 # 中文对话示例系统消息
 sys_msg = {
