@@ -2,9 +2,9 @@
 
 <img src="./assets/minicpm_v_and_minicpm_o_title.png" width="500em" ></img> 
 
-**A Gemini 2.5 Flash Level MLLM for Vision, Speech, and Full-Duplex Mulitmodal Live Streaming on Your Phone**
+**A Gemini 2.5 Flash Level MLLM for Vision, Speech, and Full-Duplex Multimodal Live Streaming on Your Phone**
 
-**🥳 Experience T on you PC/Mac [locally](https://github.com/OpenSQZ/MiniCPM-V-CookBook/blob/main/demo/web_demo/WebRTC_Demo/README.md)!**
+**🥳 Experience it on your PC/Mac [locally](https://github.com/OpenSQZ/MiniCPM-V-CookBook/blob/main/demo/web_demo/WebRTC_Demo/README.md)!**
 
   <strong>[中文](./README_zh.md) |
   English</strong>
