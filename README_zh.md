@@ -1086,7 +1086,7 @@ MiniCPM-o 4.5 是 MiniCPM-o 系列中最新且性能最强的模型。该模型�
 
 ### 典型示例 <!-- omit in toc -->
 
-#### 整体能力
+#### 整体能力 <!-- omit in toc -->
 <div align="center">
   <a href="https://www.youtube.com/watch?v=6UzC-O1Q-1U"><img src="./assets/minicpmo4_5/video_play.png", width=70%></a>
 </div>

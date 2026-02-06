@@ -111,7 +111,6 @@
 
 
 - [MiniCPM-o 4.5](#minicpm-o-45)
-    - [Overall](#overall)
 - [MiniCPM-V 4.0](#minicpm-v-40)
 - [MiniCPM-V \& o Cookbook](#minicpm-v--o-cookbook)
 - [Model Zoo](#model-zoo)
@@ -1121,7 +1120,7 @@ Advancing popular visual capabilities from MiniCPM-V series, MiniCPM-o 4.5 can p
 
 ### Examples <!-- omit in toc -->
 
-#### Overall
+#### Overall <!-- omit in toc -->
 
 <div align="center">
   <a href="https://www.youtube.com/watch?v=6UzC-O1Q-1U"><img src="./assets/minicpmo4_5/video_play.png", width=70%></a>
