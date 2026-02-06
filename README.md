@@ -2,7 +2,9 @@
 
 <img src="./assets/minicpm_v_and_minicpm_o_title.png" width="500em" ></img> 
 
-**A Gemini 2.5 Flash Level MLLM for Vision, Speech, and Full-Duplex Mulitmodal Live Streaming on Your Phone**
+**A Gemini 2.5 Flash Level MLLM for Vision, Speech, and Full-Duplex Multimodal Live Streaming on Your Phone**
+
+**🥳 Experience it on your PC/Mac [locally](https://github.com/OpenSQZ/MiniCPM-V-CookBook/blob/main/demo/web_demo/WebRTC_Demo/README.md)!**
 
   <strong>[中文](./README_zh.md) |
   English</strong>
@@ -111,6 +113,7 @@
 
 
 - [MiniCPM-o 4.5](#minicpm-o-45)
+    - [Overall](#overall)
 - [MiniCPM-V 4.0](#minicpm-v-40)
 - [MiniCPM-V \& o Cookbook](#minicpm-v--o-cookbook)
 - [Model Zoo](#model-zoo)
@@ -1120,12 +1123,17 @@ Advancing popular visual capabilities from MiniCPM-V series, MiniCPM-o 4.5 can p
 
 ### Examples <!-- omit in toc -->
 
+#### Overall
+
 <div align="center">
   <a href="https://www.youtube.com/watch?v=6UzC-O1Q-1U"><img src="./assets/minicpmo4_5/video_play.png", width=70%></a>
 </div>
 
 
-#### End-to-End Voice Chat <!-- omit in toc -->
+#### 🎙️ Speech Conversation <!-- omit in toc -->
+
+> [!NOTE]
+> For detailed speech conversation examples, refer to [Audio Demo Page](https://openbmb.github.io/minicpm-o-4_5/)
 
 > *Simplex speech conversation with custom reference audio and character prompts.*
 
@@ -2145,6 +2153,7 @@ else:
 
 ### Simplex Realtime Speech Conversation Mode <!-- omit in toc -->
 
+
 <details>
 <summary>Click to show simplex mode realtime speech conversation API usage.</summary>
 
@@ -2208,6 +2217,7 @@ user_audio, _ = librosa.load("user_audio.wav", sr=16000, mono=True)
 IN_SAMPLE_RATE = 16000 # input audio sample rate, fixed value
 CHUNK_SAMPLES = IN_SAMPLE_RATE # sample
 OUT_SAMPLE_RATE = 24000 # output audio sample rate, fixed value
+MIN_AUDIO_SAMPLES = 16000
 
 total_samples = len(user_audio)
 num_chunks = (total_samples + CHUNK_SAMPLES - 1) // CHUNK_SAMPLES
@@ -2218,7 +2228,9 @@ for chunk_idx in range(num_chunks):
     chunk_audio = user_audio[start:end]
     
     is_last_chunk = (chunk_idx == num_chunks - 1)
-    
+    if is_last_chunk and len(chunk_audio) < MIN_AUDIO_SAMPLES:
+        chunk_audio = np.concatenate([chunk_audio, np.zeros(MIN_AUDIO_SAMPLES - len(chunk_audio), dtype=chunk_audio.dtype)])
+
     user_msg = {"role": "user", "content": [chunk_audio]}
     
     # For each 1s audio chunk, perform streaming_prefill once to reduce first-token latency
@@ -2228,6 +2240,7 @@ for chunk_idx in range(num_chunks):
         omni_mode=False,
         is_last_chunk=is_last_chunk,
     )
+
 
 # Let model generate response in a streaming manner
 generate_audio = True
@@ -2244,6 +2257,7 @@ iter_gen = model.streaming_generate(
 audios = []
 text = ""
 
+output_audio_path = ...
 if generate_audio:
     for wav_chunk, text_chunk in iter_gen:
         audios.append(wav_chunk)
@@ -2264,7 +2278,6 @@ else:
 ```
 
 </details>
-
 
 #### Speech Conversation as a Versatile and Vibe AI Assistant <!-- omit in toc -->
 
