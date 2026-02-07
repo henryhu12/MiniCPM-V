@@ -1075,62 +1075,6 @@ Advancing popular visual capabilities from MiniCPM-V series, MiniCPM-o 4.5 can p
 
 
 <details>
-<summary>Click to view speech duplex results.</summary>
-
-**FullDuplexBench v1.0** benchmarking turn-taking behavior of full-duplex spoken dialogue models
-
-  <div align="center">
-  <table style="margin: 0px auto;">
-<tr>
-  <th nowrap="nowrap" align="left"><b>Model</b></th>
-  <th nowrap="nowrap"><b>Backchannel<br>Mean TOR(↓)</b></th>
-  <th nowrap="nowrap"><b>Candor Pause<br>Handling TOR(↓)</b></th>
-  <th nowrap="nowrap"><b>Synthetic Pause<br>Handling TOR(↓)</b></th>
-  <th nowrap="nowrap"><b>Turn Taking<br>TOR(↑)</b></th>
-  <th nowrap="nowrap"><b>Turn Taking<br>Latency(↓)</b></th>
-  <th nowrap="nowrap"><b>User Interruption<br>Score(↑)</b></th>
-  <th nowrap="nowrap"><b>User Interruption<br>TOR(↑)</b></th>
-  <th nowrap="nowrap"><b>User Interruption<br>Latency(↓)</b></th>
-</tr>
-<tr>
-  <td nowrap="nowrap" align="left">Qwen3-Omni-30B-A3B-Instruct</td>
-  <td align="center">n/a</td>
-  <td align="center">n/a</td>
-  <td align="center">n/a</td>
-  <td align="center">n/a</td>
-  <td align="center">n/a</td>
-  <td align="center">n/a</td>
-  <td align="center">n/a</td>
-  <td align="center">n/a</td>
-</tr>
-<tr>
-  <td nowrap="nowrap" align="left">Gemini-Live</td>
-  <td align="center"><ins>0.09</ins></td>
-  <td align="center"><ins>0.26</ins></td>
-  <td align="center"><ins>0.31</ins></td>
-  <td align="center"><ins>0.66</ins></td>
-  <td align="center"><b>1.30</b></td>
-  <td align="center"><b>3.38</b></td>
-  <td align="center"><ins>0.89</ins></td>
-  <td align="center"><b>1.18</b></td>
-</tr>
-<tr>
-  <td nowrap="nowrap" align="left">MiniCPM-o 4.5-Instruct</td>
-  <td align="center"><b>0.04</b></td>
-  <td align="center"><b>0.00</b></td>
-  <td align="center"><b>0.00</b></td>
-  <td align="center"><b>1.00</b></td>
-  <td align="center"><ins>1.45</ins></td>
-  <td align="center"><ins>3.29</ins></td>
-  <td align="center"><b>0.97</b></td>
-  <td align="center"><ins>1.95</ins></td>
-</tr>
-  </table>
-  </div>
-</details>
-
-
-<details>
 <summary>Click to view inference efficiency results.</summary>
 
 **Inference Efficiency**
