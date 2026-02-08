@@ -119,6 +119,7 @@
   - [Model Initialization](#model-initialization)
   - [Duplex Omni Mode](#duplex-omni-mode)
   - [Simplex Omni Mode](#simplex-omni-mode)
+  - [Simplex Realtime Speech Conversation Mode](#simplex-realtime-speech-conversation-mode)
   - [Visual Understanding](#visual-understanding)
   - [Structured Content Input](#structured-content-input)
 - [Supported Frameworks](#supported-frameworks)
@@ -2149,7 +2150,7 @@ else:
 
 </details>
 
-### Simplex Realtime Speech Conversation Mode <!-- omit in toc -->
+### Simplex Realtime Speech Conversation Mode
 
 
 <details>
