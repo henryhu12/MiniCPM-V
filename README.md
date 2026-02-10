@@ -2183,9 +2183,9 @@ else:
 <details>
 <summary>Click to show simplex mode realtime speech conversation API usage.</summary>
 
-First, make sure you have all dependencies, especially `minicpmo-utils[all]>=1.0.2`:
+First, make sure you have all dependencies, especially `"minicpmo-utils[all]>=1.0.5"`:
 ```bash
-pip install "transformers==4.51.0" accelerate "torch>=2.3.0,<=2.8.0" "torchaudio<=2.8.0" "minicpmo-utils[all]>=1.0.2"
+pip install "transformers==4.51.0" accelerate "torch>=2.3.0,<=2.8.0" "torchaudio<=2.8.0" "minicpmo-utils[all]>=1.0.5"
 ```
 
 ```python
